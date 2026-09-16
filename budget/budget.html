@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyFinance - Budget</title>
+  <link rel="stylesheet" href="budget.css">
+</head>
+<body>
+
+  <div class="left_tab">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-icon">💼</span>
+        <span>MyFinance</span>
+      </div>
+
+      <nav class="nav">
+        <a href="#" class="nav-item"><span>⌂</span> Dashboard</a>
+        <a href="#" class="nav-item"><span>⇄</span> Transactions</a>
+        <a href="#" class="nav-item"><span>▥</span> Analytics</a>
+        <a href="#" class="nav-item active"><span>▣</span> Budget</a>
+        <a href="#" class="nav-item"><span>👨</span> profile</a>
+      </nav>
+
+      <div class="profile">
+        <div class="avatar">A</div>
+        <div>
+          <strong>Aswin</strong>
+          <small>aswin@example.com</small>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">5. Budget Page</p>
+          <h1>Budget</h1>
+        </div>
+        <button class="set-budget-btn" id="openBudgetModal">＋ Set Budget</button>
+      </header>
+
+      <section class="budget-card">
+        <div class="table-header">
+          <span>Category</span>
+          <span>Budget</span>
+          <span>Spent</span>
+          <span>Remaining</span>
+          <span>Progress</span>
+        </div>
+
+        <div id="budgetRows"></div>
+      </section>
+
+      <section class="alert" id="budgetAlert" hidden>
+        <div class="alert-icon">!</div>
+        <div>
+          <strong id="alertTitle">Budget exceeded!</strong>
+          <p id="alertMessage"></p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Set Budget Modal -->
+  <div class="modal-overlay" id="budgetModal">
+    <div class="modal">
+      <button class="close-btn" id="closeModal">&times;</button>
+      <h2>Set Budget</h2>
+      <p>Choose a category and enter the monthly budget.</p>
+
+      <label for="categorySelect">Category</label>
+      <select id="categorySelect"></select>
+
+      <label for="budgetInput">Budget amount (₹)</label>
+      <input type="number" id="budgetInput" min="0" step="100" placeholder="Enter amount">
+
+      <button class="save-btn" id="saveBudget">Save Budget</button>
+    </div>
+  </div>
+
+  <script src="budget.js"></script>
+</body>
+</html>
