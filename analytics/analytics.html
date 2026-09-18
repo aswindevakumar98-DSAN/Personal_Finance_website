@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Analytic page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:opsz,wght@18..144,300..900&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    
+     <!-- parent container -->
+    <section class="container">  
+      <!--side bar  -->
+
+     <div class="header-section">
+        <!-- child1 header-section -->
+        <div class="left_tab">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-icon">💼</span>
+        <span>MyFinance</span>
+      </div>
+
+      <nav class="nav">
+        <a href="#" class="nav-item"><span>⌂</span> Dashboard</a>
+        <a href="#" class="nav-item"><span>⇄</span> Transactions</a>
+        <a href="#" class="nav-item "><span>▣</span> Budget</a>
+        <a href="analytics.html" class="nav-item active"><span>▥</span> Analytics</a>
+        <a href="#" class="nav-item"><span>👨</span> profile</a>
+      </nav>
+
+      <div class="profile">
+        <div class="avatar">A</div>
+        <div>
+          <strong>Abi Soniya</strong>
+          <small>abisoniya@example.com</small>
+        </div>
+      </div>
+    </aside>
+
+</div></div>
+       <!-- analytic main -->
+      <div class="Analytic-main">
+ 
+        <div class="Analytic__heading">
+            <div class="Analytic__head-icon">
+            <h1 class="Analytic__heading1"> Analytic</h1>
+             <span class="Analytic__icon">
+                <i id="sunIcon" class="fa-solid fa-sun" style="color: rgb(255, 212, 59);"></i>
+                <i id="moonIcon" class="fa-solid fa-moon" style="color: rgb(116, 192, 252);"></i>
+                <i id="profileIcon" class="fa-solid fa-user" style="color: rgb(116, 192, 252);"></i>
+             </span>
+            </div>
+             
+            <div class="Analytic__button">
+        <button class="button__1">Income vs Expenses</button>
+        <button class="button__2">Catogory-wise</button>
+        <button class="button__3">Monthly Spending</button>
+        </div>
+ </div>
+<!-- income,expense,balance -->
+        <div class="Analytic__display">
+            <div class="Analytic__display1">
+               <h4>Total Income</h4>
+               <h2></h2>
+            </div>
+
+            <div class="Analytic__display2">
+               <h4>Total Expenses </h4>
+               <h2></h2>
+            </div>
+
+            <div class="Analytic__display3">
+                <h4>Net Balance</h4>
+                <h2></h2>
+            </div>
+        </div>
+
+        <div class="monthly-summary__section">
+            <h3> Monthly Summary</h3>
+        </div>
+        <table class="monthly-summary">
+            <tr class="row1">
+                <th>Month</th>
+                <th>Income</th>
+                <th>Expense</th>
+                <th> balance</th>
+            </tr>
+
+            <tr class="row2">
+                <td></td>
+                <td></td>
+                  <td></td>
+                    <td></td>
+            </tr>
+
+            <tr class="row3">
+                <td></td>
+                <td></td>
+                  <td></td>
+                    <td></td>
+            </tr>
+
+            <tr class="row4">
+                <td></td>
+                <td></td>
+                  <td></td>
+                    <td></td>
+            </tr>
+
+
+        </table>
+    </section>
+    <script src="analytics.js"> </script>
+</body>
+
+</html>
