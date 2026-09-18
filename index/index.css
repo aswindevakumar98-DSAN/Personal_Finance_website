@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f7f5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-image { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    z-index: -2; 
+} 
+.overlay { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0, 50, 35, 0.55); 
+    z-index: -1; }
+
+.container {
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+}
+
+.form-box {
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #176b4d;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    color: #444;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+
+    border: 1px solid #ccc;
+    border-radius: 7px;
+
+    font-size: 15px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #176b4d;
+}
+
+.password-box {
+    display: flex;
+    gap: 5px;
+}
+
+.password-box input {
+    flex: 1;
+}
+
+.password-box button {
+    height: 42px;
+    padding: 0 10px;
+
+    border: none;
+    background: #ddd;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.main-btn {
+    width: 100%;
+    padding: 13px;
+
+    background: #176b4d;
+    color: white;
+
+    border: none;
+    border-radius: 7px;
+
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.main-btn:hover {
+    background: #12563e;
+}
+
+.switch {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+.switch a {
+    color: #176b4d;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.hidden {
+    display: none;
+}
+
+#loginMessage,
+#signupMessage {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
