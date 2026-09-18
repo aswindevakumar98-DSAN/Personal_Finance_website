@@ -10,7 +10,6 @@ const rowsContainer = document.getElementById("budgetRows");
 const alertBox = document.getElementById("budgetAlert");
 const alertTitle = document.getElementById("alertTitle");
 const alertMessage = document.getElementById("alertMessage");
-
 const modal = document.getElementById("budgetModal");
 const openModal = document.getElementById("openBudgetModal");
 const closeModal = document.getElementById("closeModal");
