@@ -46,6 +46,7 @@ loginForm.addEventListener("submit", function(event) {
 
     message.textContent = "Login successful!";
     message.style.color = "green";
+    window.location.href = "./dashboard/dashboard.html";
 });
 
 
