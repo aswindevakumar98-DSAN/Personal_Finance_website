@@ -193,6 +193,46 @@ body {
   background: #e84855;
 }
 
+.income-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.income-form label {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.income-form input {
+  width: 120px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px;
+  color: var(--text);
+  background: #fff;
+  font: inherit;
+  font-size: 12px;
+}
+
+.income-btn {
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: #fff;
+  background: var(--blue);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.income-btn:hover {
+  background: var(--navy);
+}
+
 .summary-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));

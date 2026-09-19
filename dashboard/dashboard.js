@@ -1,8 +1,8 @@
 const STORAGE_KEY = "financeDashboardData";
 const USER_KEYS = ["loggedInUser", "username", "userName"];
-const MONTHLY_INCOME = 25000;
 
 let totalAmount = 10000;
+let monthlyIncome = 0;
 let expenses = [
   { description: "Food", category: "Food", amount: 500, date: "2026-09-12" },
   { description: "Travel", category: "Travel", amount: 300, date: "2026-09-11" },
@@ -18,6 +18,8 @@ const categoryList = document.getElementById("categoryList");
 const expenseCountBadge = document.getElementById("expenseCountBadge");
 const formMessage = document.getElementById("formMessage");
 const initialAmountInput = document.getElementById("initialAmount");
+const monthlyIncomeInput = document.getElementById("monthlyIncome");
+const incomeForm = document.getElementById("incomeForm");
 const expenseDescriptionInput = document.getElementById("expenseDescription");
 const expenseCategoryInput = document.getElementById("expenseCategory");
 const expenseAmountInput = document.getElementById("expenseAmount");
@@ -33,7 +35,7 @@ const resetDataButton = document.getElementById("resetDataButton");
 
 function safeStoreData() {
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify({ totalAmount, expenses }));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ totalAmount, monthlyIncome, expenses }));
   } catch (error) {
     console.log("Local storage is not available.");
   }
@@ -51,6 +53,10 @@ function loadSavedData() {
 
     if (parsedData.totalAmount !== undefined) {
       totalAmount = Number(parsedData.totalAmount);
+    }
+
+    if (parsedData.monthlyIncome !== undefined) {
+      monthlyIncome = Number(parsedData.monthlyIncome);
     }
 
     if (Array.isArray(parsedData.expenses)) {
@@ -174,7 +180,7 @@ function updateDashboard() {
   const remainingBalance = getRemainingBalance();
 
   totalBalanceValue.textContent = formatCurrency(totalAmount);
-  totalIncomeValue.textContent = formatCurrency(MONTHLY_INCOME);
+  totalIncomeValue.textContent = formatCurrency(monthlyIncome);
   totalExpenseValue.textContent = formatCurrency(totalExpense);
   remainingBalanceValue.textContent = formatCurrency(remainingBalance);
   savedValue.textContent = formatCurrency(remainingBalance);
@@ -183,8 +189,23 @@ function updateDashboard() {
   createCategorySummary();
   renderExpenses();
   initialAmountInput.value = totalAmount;
+  monthlyIncomeInput.value = monthlyIncome;
   safeStoreData();
 }
+
+incomeForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const incomeValue = Number(monthlyIncomeInput.value.trim());
+
+  if (Number.isNaN(incomeValue) || incomeValue < 0) {
+    window.alert("Please enter a valid monthly income.");
+    return;
+  }
+
+  monthlyIncome = incomeValue;
+  updateDashboard();
+});
 
 function validateForm(initialAmount, description, category, expenseValue) {
   if (!initialAmount || initialAmount < 0) {
@@ -243,6 +264,7 @@ resetDataButton.addEventListener("click", () => {
   }
 
   totalAmount = 0;
+  monthlyIncome = 0;
   expenses = [];
   expenseForm.reset();
   updateDashboard();

@@ -21,16 +21,16 @@
   <a href="dashboard.html" class="nav-item active">
     <span>⌂</span> Dashboard
   </a>
-  <a href="transactions.html" class="nav-item">
+  <a href="../transactions/transactions.html" class="nav-item">
     <span>⇄</span> Transactions
   </a>
-  <a href="budget.html" class="nav-item">
+  <a href="../budget/budget.html" class="nav-item">
     <span>▣</span> Budget
   </a>
-  <a href="analytics.html" class="nav-item">
+  <a href="../analytics/analytics.html" class="nav-item">
     <span>▥</span> Analytics
   </a>
-  <a href="profile.html" class="nav-item">
+  <a href="../profile/profile.html" class="nav-item">
     <span>◉</span> Profile
   </a>
 </nav>
@@ -58,6 +58,12 @@
               <small>Monthly Planner</small>
             </div>
           </div>
+
+          <form id="incomeForm" class="income-form">
+            <label for="monthlyIncome">Monthly Income</label>
+            <input id="monthlyIncome" name="monthlyIncome" type="number" min="0" step="0.01" placeholder="₹ Income" />
+            <button type="submit" class="income-btn">Save Income</button>
+          </form>
 
           <button type="button" id="resetDataButton" class="reset-btn">Reset Data</button>
         </header>
