@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <div class="left_tab">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-icon">💼</span>
+          <span>MyFinance</span>
+        </div>
+
+<nav class="nav">
+  <a href="dashboard.html" class="nav-item active">
+    <span>⌂</span> Dashboard
+  </a>
+  <a href="transactions.html" class="nav-item">
+    <span>⇄</span> Transactions
+  </a>
+  <a href="budget.html" class="nav-item">
+    <span>▣</span> Budget
+  </a>
+  <a href="analytics.html" class="nav-item">
+    <span>▥</span> Analytics
+  </a>
+  <a href="profile.html" class="nav-item">
+    <span>◉</span> Profile
+  </a>
+</nav>
+
+        <div class="profile">
+          <div class="avatar">A</div>
+          <div>
+            <strong>Aswin</strong>
+            <small>aswin@example.com</small>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Welcome back</p>
+            <h1 id="dashboardGreeting">Good Morning, User</h1>
+          </div>
+
+          <div class="user-chip">
+            <div class="avatar" id="profileAvatar">U</div>
+            <div class="user-text">
+              <strong id="profileName">User</strong>
+              <small>Monthly Planner</small>
+            </div>
+          </div>
+
+          <button type="button" id="resetDataButton" class="reset-btn">Reset Data</button>
+        </header>
+
+        <section class="summary-grid">
+          <article class="summary-card balance-card">
+            <div class="card-top">
+              <span>Total Balance</span>
+              <span class="chip success-chip">Live</span>
+            </div>
+            <h2 id="totalBalanceValue">₹0</h2>
+            <p>Current available balance</p>
+          </article>
+
+          <article class="summary-card income-card">
+            <div class="card-top">
+              <span>Total Income</span>
+              <span class="chip income-chip">Income</span>
+            </div>
+            <h2 id="totalIncomeValue">₹0</h2>
+            <p>Monthly income</p>
+          </article>
+
+          <article class="summary-card expense-card">
+            <div class="card-top">
+              <span>Total Expenses</span>
+              <span class="chip expense-chip">Spent</span>
+            </div>
+            <h2 id="totalExpenseValue">₹0</h2>
+            <p>All tracked spending</p>
+          </article>
+
+          <article class="summary-card saving-card">
+            <div class="card-top">
+              <span>Net Balance</span>
+              <span class="chip saving-chip">Saved</span>
+            </div>
+            <h2 id="remainingBalanceValue">₹0</h2>
+            <p>Balance after expenses</p>
+          </article>
+        </section>
+
+        <section class="content-area">
+          <div class="panel panel-large">
+            <div class="panel-header">
+              <h3>Recent Expenses</h3>
+              <span id="expenseCountBadge" class="mini-badge">0 items</span>
+            </div>
+            <ul id="expenseList" class="expense-list"></ul>
+          </div>
+
+          <div class="right-column">
+            <div class="panel">
+              <div class="panel-header">
+                <h3>Spending Overview</h3>
+              </div>
+              <div id="categoryList" class="category-list"></div>
+            </div>
+
+            <div class="panel form-panel">
+              <div class="panel-header">
+                <h3>Add Expense</h3>
+              </div>
+
+              <form id="expenseForm" novalidate>
+                <div class="field-group">
+                  <label for="initialAmount">Initial Amount</label>
+                  <input id="initialAmount" name="initialAmount" type="number" min="0" step="0.01" placeholder="Enter total amount" />
+                </div>
+
+                <div class="field-group">
+                  <label for="expenseDescription">Expense Description</label>
+                  <input id="expenseDescription" name="expenseDescription" type="text" placeholder="e.g. Rent, Food, Travel" />
+                </div>
+
+                <div class="field-group">
+                  <label for="expenseCategory">Category</label>
+                  <input id="expenseCategory" name="expenseCategory" type="text" placeholder="e.g. Food, Travel, Study" />
+                </div>
+
+                <div class="field-group">
+                  <label for="expenseAmount">Expense Amount</label>
+                  <input id="expenseAmount" name="expenseAmount" type="number" min="0" step="0.01" placeholder="Enter amount" />
+                </div>
+
+                <button type="submit" class="submit-btn">Add Expense</button>
+                <p id="formMessage" class="form-message" aria-live="polite"></p>
+              </form>
+            </div>
+
+            <div class="panel profile-panel">
+              <div class="profile-box">
+                <div class="avatar large" id="profileAvatarLarge">U</div>
+                <div>
+                  <h4 id="userProfileName">User</h4>
+                  <p>Budget Tracker</p>
+                </div>
+              </div>
+
+              <div class="mini-stats">
+                <div>
+                  <span>Saved</span>
+                  <strong id="savedValue">₹0</strong>
+                </div>
+                <div>
+                  <span>Spent</span>
+                  <strong id="spentValue">₹0</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="page-footer">
+      <!-- FOOTER SECTION -->
+      <p>MyFinance Dashboard © 2026</p>
+    </footer>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>
